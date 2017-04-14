@@ -11,7 +11,7 @@ import ScoringPhase from './phases/ScoringPhase.js'
 import WinnerPhase from './phases/WinnerPhase.js'
 
 // How frequently we poll the server for changes
-const POLL_FREQUENCY = 100 // ms
+const POLL_FREQUENCY = 1000 // ms
 const SERVER_URL = 'http://barnyard-nuc.local'
 
 // String -> Component
@@ -35,6 +35,7 @@ class App extends Component {
     this.state = {
       currentPhase: 'GameWaiting',
     }
+    this.onPollTimer()
     setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
