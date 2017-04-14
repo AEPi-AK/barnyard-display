@@ -17,7 +17,7 @@ html, body, #root {
   flex-direction: column;
 }
 
-.Phase-Name {
+.Phase-name {
   padding: 50px;
   font-size: 100px;
   font-weight: 300;
