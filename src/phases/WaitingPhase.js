@@ -1,5 +1,5 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 
 export default class WaitingPhase extends Component {
-  render() { return "WaitingPhase" }
+  render() { return <div className="Phase-Name">{this.constructor.name}</div> }
 }

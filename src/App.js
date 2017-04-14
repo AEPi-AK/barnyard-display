@@ -11,7 +11,7 @@ import ScoringPhase from './phases/ScoringPhase.js'
 import WinnerPhase from './phases/WinnerPhase.js'
 
 // How frequently we poll the server for changes
-const POLL_FREQUENCY = 250 // ms
+const POLL_FREQUENCY = 100 // ms
 const SERVER_URL = 'http://barnyard-nuc.local'
 
 // String -> Component
@@ -26,12 +26,15 @@ const phaseComponentMap = {
   "GameWinner": WinnerPhase,
 }
 
-const componentForPhase = phase => phaseComponentMap[phase]
+const componentForPhase = phase => React.createFactory(phaseComponentMap[phase])
 
 class App extends Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      currentPhase: 'GameWaiting',
+    }
     setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
@@ -46,7 +49,8 @@ class App extends Component {
     return (
       <div className="App">
         <app className="App-phase-container">
-          { componentForPhase(this.state.currentPhase) }
+          { componentForPhase(this.state.currentPhase)({...this.state}) }
+          <div className="App-phase-time">{Number(this.state.timeSincePhaseStart).toFixed(1)}  seconds</div>
         </app>
       </div>
     )
