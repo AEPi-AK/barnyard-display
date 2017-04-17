@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Beast from '../Beast'
+import Banner from '../Banner'
 import Star from '../images/star.svg'
 
 function playerTotalScore({slot0Score, slot1Score, slot2Score}) {
@@ -9,7 +10,6 @@ function playerTotalScore({slot0Score, slot1Score, slot2Score}) {
 class ResultsPanel extends Component {
 
   render() {
-    console.log(this.props.player)
     return (
       <div className="ResultsPanel">
         <div className="ResultsPanel-header">
@@ -48,9 +48,7 @@ export default class ScoringPhase extends Component {
     return (
       <div className="ScoringPhase">
         <img className="image-full-background" alt={this.props.location} src={this.props.biomeImages[this.props.location]}/>
-        <div className="Banner">
-          <div className="Banner-title">{this.props.location}</div>
-        </div>
+        <Banner title={this.props.location}/>
         <div className="ScoringPhase-resultsPanels">
           <ResultsPanel player={this.props.player1} playerNum={1}/>
           <ResultsPanel player={this.props.player2} playerNum={2}/>

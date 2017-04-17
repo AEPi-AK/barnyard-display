@@ -20,10 +20,10 @@ const POLL_FREQUENCY = 1000 // ms
 const SERVER_URL = 'http://barnyard-nuc.local'
 
 const biomeImages = {
-  "rainforest": rainforestImage,
-  "arctic": arcticImage,
-  "desert": desertImage,
-  "grasslands": grasslandsImage
+  "Rainforest": rainforestImage,
+  "Arctic": arcticImage,
+  "Desert": desertImage,
+  "Grasslands": grasslandsImage
 }
 
 // String -> Component
@@ -31,6 +31,7 @@ const phaseComponentMap = {
   "GameWaiting": WaitingPhase,
   "GameJoining": JoiningPhase,
   "GameInstructions": InstructionsPhase,
+  "GameBiomePicking": BiomeSelectionPhase,
   "GameBiomeSelection": BiomeSelectionPhase,
   "GameInProgress": InProgressPhase,
   "GameTimeUp": TimeUpPhase,
@@ -45,9 +46,10 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      didInitialLoad: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameScoring',
+      currentPhase: 'GameInProgress',
       player1: {
         slot0: 'NoHead',
         slot1: 'NoBody',
@@ -66,20 +68,20 @@ class App extends Component {
         slot2Score: 0,
         joined: false,
       },
-      location: 'desert',
+      location: 'Desert',
       settings: {
         volume: 25, // [0-100]
         brightness: 255, // [0-255]
       }
     }
-    // this.onPollTimer()
-    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    this.onPollTimer()
+    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {
     fetch(`${SERVER_URL}/gamestate`)
     .then(response => response.json())
-    .then(gameState => this.setState({...gameState}))
+    .then(gameState => this.setState({...gameState, didInitialLoad: true}))
     .catch(error => console.error(error))
   }
 
@@ -87,7 +89,9 @@ class App extends Component {
     return (
       <div className="App">
         <app className="App-phase-container">
-          { componentForPhase(this.state.currentPhase)({...this.state, biomeImages}) }
+          { !this.state.didInitialLoad
+            ? 'Loading...'
+            : componentForPhase(this.state.currentPhase)({...this.state, biomeImages}) }
         </app>
       </div>
     )
