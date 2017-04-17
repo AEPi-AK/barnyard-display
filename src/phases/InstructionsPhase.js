@@ -7,7 +7,7 @@ import background from "../images/blueprint-pattern.png"
 export default class InstructionsPhase extends Component {
   render() {
     return (
-      <div className="instructions-phase">
+      <div className="InstructionsPhase">
         <img className='image-full-background' src={background}/>
         <div className="instructions-container">
           <div className="instructions">In a few moments, you will be shown a <span className="important-instructions">habitat</span>.</div>
