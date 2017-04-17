@@ -218,3 +218,66 @@ html, body, #root {
 .Banner-time > img {
   margin-right: 15px;
 }
+
+/* ScoringPhase */
+
+.ScoringPhase {
+  height: 100%;
+}
+
+.ScoringPhase-resultsPanels {
+  display: flex;
+  flex-direction: row;
+}
+
+.ResultsPanel-background {
+  background-color: rgba(0,0,0,0.8);
+  width: 50%;
+  height: 90%;
+  margin: 10px 10px 10px 10px;
+  border-radius: 10px;
+  border: 2.5px solid white;
+}
+
+.ResultsPanel-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+}
+
+.ResultsPanel-playerScore {
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+.ResultsPanel-starPanel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-context: flex-around;
+}
+
+.ResultsPanel-imgPanel {
+  display: flex;
+  justify-content: center;
+}
+
+.ResultsPanel-img {
+  width: 90%;
+  background-color: white;
+  height: 150px;
+}
+
+.ResultsPanel-description {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+
+.Stars {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
