@@ -23,7 +23,7 @@ const biomeImages = {
   "Rainforest": rainforestImage,
   "Arctic": arcticImage,
   "Desert": desertImage,
-  "Grasslands": grasslandsImage
+  "Grassland": grasslandsImage
 }
 
 // String -> Component
