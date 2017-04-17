@@ -6,7 +6,7 @@ import background from "../images/blueprint-pattern.png"
 export default class WaitingPhase extends Component {
   render() {
     return (
-      <div className="waiting-phase">
+      <div className="WaitingPhase">
         <img className='image-full-background' src={background}/>
         <img className="logo" src={logo}/>
         <div className="game-text-container">

@@ -5,8 +5,8 @@ html, body, #root {
 
 .App {
   height: 100%;
-  /*background-image: url(./images/blueprint-pattern.png);*/
-  background-repeat: repeat;
+  background-image: url(./images/blueprint-pattern.png);
+  /*background-repeat: no-repeat;*/
   color: white;
   font-family: 'Lato', sans-serif;
 }
@@ -37,14 +37,18 @@ html, body, #root {
 
 /* WaitingPhase */
 
-.waiting-phase {
-  width: 100%;
-  text-align: center;
+.WaitingPhase {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .logo {
   max-width: 80%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-text {
@@ -52,6 +56,11 @@ html, body, #root {
 }
 
 .game-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
   font-weight: 100;
   font-size: 50px;
   margin-top: 70px;

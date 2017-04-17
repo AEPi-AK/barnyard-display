@@ -45,7 +45,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentPhase: 'GameBiomeSelection',
+      currentPhase: 'GameWaiting',
       location: 'desert',
     }
     // this.onPollTimer()
