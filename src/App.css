@@ -2,21 +2,15 @@ html, body, #root {
   height: 100%;
 }
 
+
 .App {
   height: 100%;
-  background-image: url(./images/blueprint-pattern.png);
+  /*background-image: url(./images/blueprint-pattern.png);*/
   background-repeat: repeat;
   color: white;
-  font-family: 'ArchitectsDaughterWeb', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-phase-container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
 .Phase-name {
   padding: 50px;
@@ -27,4 +21,80 @@ html, body, #root {
 .App-phase-time {
   font-size: 70px;
   font-weight: bold;
+}
+
+
+/* Universal stuff */
+.image-full-background {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+/* WaitingPhase */
+
+.waiting-phase {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  max-width: 80%;
+  margin: auto;
+}
+
+.button-text {
+  max-width: 50%;
+}
+
+.game-text-container {
+  font-weight: 100;
+  font-size: 50px;
+  margin-top: 70px;
+  margin-bottom: 40px;
+
+}
+
+/* InstructionPhase */
+.instructions-phase {
+  text-align: center;
+  position: relative;
+}
+
+.instructions-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 50px;
+  clear: both;
+  font-weight: 400;
+}
+
+.instruction-images-container {
+  margin: 0 auto;
+  margin-left: 160px;
+  margin-right: 160px;
+}
+
+.instruction-image {
+  float: left;
+  width: 30%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
+.important-instructions {
+  color: #FAF42D;
+  font-weight: 600;
+}
+
+
+/* BiomeSelectionPhase */
+.biome-info-container {
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.76);
 }
