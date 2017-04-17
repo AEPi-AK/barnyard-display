@@ -47,13 +47,13 @@ class App extends Component {
     this.state = {
       phaseTime: "5.00",
       timeSincePhaseStart: "2.33234",
-      currentPhase: 'GameInProgress',
+      currentPhase: 'GameWaiting',
       player1: {joined: false},
       player2: {joined: true},
       location: 'desert',
     }
-    // this.onPollTimer()
-    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    this.onPollTimer()
+    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {
