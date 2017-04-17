@@ -1,0 +1,17 @@
+.Beast {
+  position: relative;
+  width: 550px;
+  height: 183px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.Beast > img {
+  position: absolute;
+  width: 550px;
+}
+
+.Beast-head {
+  z-index: 100;
+
+}

@@ -45,15 +45,20 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      phaseTime: "5.00",
-      timeSincePhaseStart: "2.33234",
-      currentPhase: 'GameTimeUp',
-      player1: {joined: false},
+      phaseTime: '5.00',
+      timeSincePhaseStart: '2.33234',
+      currentPhase: 'GameScoring',
+      player1: {
+        slot0Score: 0,
+        slot1Score: 0,
+        slot2Score: 3,
+        joined: false
+      },
       player2: {joined: true},
       location: 'desert',
     }
-    this.onPollTimer()
-    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    // this.onPollTimer()
+    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {

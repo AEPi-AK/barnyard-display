@@ -5,6 +5,7 @@ import tail from "../images/instruction-tail.png"
 import background from "../images/blueprint-pattern.png"
 
 export default class InstructionsPhase extends Component {
+
   render() {
     return (
       <div className="InstructionsPhase">
@@ -25,4 +26,5 @@ export default class InstructionsPhase extends Component {
       </div>
     )
   }
+  
 }
