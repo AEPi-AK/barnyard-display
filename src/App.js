@@ -46,7 +46,7 @@ class App extends Component {
     super(props)
     this.state = {
       currentPhase: 'GameBiomeSelection',
-      location: 'rainforest',
+      location: 'desert',
     }
     // this.onPollTimer()
     // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
