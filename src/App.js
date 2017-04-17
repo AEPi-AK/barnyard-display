@@ -46,7 +46,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      didInitialLoad: true,
+      didInitialLoad: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
       currentPhase: 'GameInProgress',
@@ -74,8 +74,8 @@ class App extends Component {
         brightness: 255, // [0-255]
       }
     }
-    // this.onPollTimer()
-    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    this.onPollTimer()
+    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {
