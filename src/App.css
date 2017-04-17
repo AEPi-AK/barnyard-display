@@ -2,23 +2,20 @@ html, body, #root {
   height: 100%;
 }
 
-
 .App {
   color: white;
-  font-family: 'Lato', sans-serif;
   height: 100%;
 }
-
 
 .Phase-name {
   padding: 50px;
   font-size: 100px;
-  font-weight: 300;
+  font-family: 'LatoWebLight';
 }
 
 .App-phase-time {
   font-size: 70px;
-  font-weight: bold;
+  font-family: 'LatoWebBold';
 }
 
 
@@ -42,6 +39,7 @@ html, body, #root {
   justify-content: center;
   flex-direction: column;
   background-image: url(./images/blueprint-pattern.png);
+  background-repeat: repeat;
 }
 
 .logo {
@@ -60,12 +58,13 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  max-width: 800px;
-  font-weight: 100;
+  max-width: 900px;
+  font-family: 'LatoWebLight';
   font-size: 50px;
   margin-top: 70px;
   margin-bottom: 40px;
   line-height: 70px;
+  text-align: center;
 }
 
 
@@ -97,7 +96,7 @@ html, body, #root {
 
 .JoiningPhase-row-vs {
   font-size: 140px;
-  font-weight: 700;
+  font-family: 'LatoWebHeavy';
 }
 
 .JoiningPhase-AvatarMissing {
@@ -117,7 +116,7 @@ html, body, #root {
   padding-bottom: 40px;
   font-size: 50px;
   clear: both;
-  font-weight: 300;
+  font-family: 'LatoWebLight';
   line-height: 70px;
 }
 
@@ -136,32 +135,11 @@ html, body, #root {
 
 .important-instructions {
   /*color: #FAF42D;*/
-  font-weight: 600;
+  font-family: 'LatoWebBold';
 }
 
 
 /* BiomeSelectionPhase */
-.biome-info-container {
-  width: 540px;
-  height: 430px;
-  background: rgba(0, 0, 0, 0.76);
-  font-size: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 4px solid white;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-}
-
-.biome-name {
-  text-transform: capitalize;
-  font-size: 80px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
 .BiomeSelectionPhase {
   height: 100%;
   display: flex;
@@ -209,7 +187,7 @@ html, body, #root {
 
 .Banner-time {
   font-size: 36px;
-  font-weight: 700;
+  font-family: 'LatoWebHeavy';
   display: flex;
   align-content: center;
   justify-content: center;
@@ -217,6 +195,27 @@ html, body, #root {
 
 .Banner-time > img {
   margin-right: 15px;
+}
+
+.Jumbotron {
+  width: 540px;
+  height: 430px;
+  background: rgba(0, 0, 0, 0.76);
+  font-size: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid white;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.Jumbotron-title {
+  text-transform: capitalize;
+  font-size: 80px;
+  font-family: 'LatoWebBold';
+  margin-bottom: 20px;
 }
 
 /* ScoringPhase */
@@ -249,7 +248,7 @@ html, body, #root {
   display: flex;
   justify-content: center;
   margin-left: 50px;
-  font-weight: bold;
+  font-family: 'LatoWebBold';
 }
 
 .ResultsPanel-starPanel {
@@ -280,4 +279,13 @@ html, body, #root {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+/* TimeUpPhase */
+
+.TimeUpPhase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }

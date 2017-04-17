@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import RainforestImg from "../images/rainforest.jpg"
 
 class Stars extends Component {
   render() {
@@ -43,7 +42,7 @@ export default class ScoringPhase extends Component {
   render() {
     return (
       <div className="ScoringPhase">
-        <img className='image-full-background' src={RainforestImg}/>
+        <img className="image-full-background" alt={this.props.location} src={this.props.biomeImages[this.props.location]}/>
 	<div className="ScoringPhase-resultsPanels">
 	  <ResultsPanel playerNum={1} score={5}/>
 	  <ResultsPanel playerNum={2} score={6}/>
@@ -52,4 +51,3 @@ export default class ScoringPhase extends Component {
     )
   }
 }
-

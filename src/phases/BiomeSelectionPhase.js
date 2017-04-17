@@ -9,15 +9,13 @@ const LocationDescriptors = {
 }
 
 export default class BiomeSelectionPhase extends Component {
-  constructor(props) {
-    super(props)
-  }
+
   render() {
     return (
       <div className="BiomeSelectionPhase biome-background">
-        <img className='image-full-background' src={this.props.biomeImages[this.props.location]}/>
-        <div className="biome-info-container">
-          <div className="biome-name">{this.props.location}</div>
+        <img className="image-full-background" src={this.props.biomeImages[this.props.location]}/>
+        <div className="Jumbotron">
+          <div className="Jumbotron-title">{this.props.location}</div>
           {LocationDescriptors[this.props.location].map(descriptor => {
             return <div className="biome-descriptors" key={descriptor}>{descriptor}</div>
           })}
@@ -25,4 +23,5 @@ export default class BiomeSelectionPhase extends Component {
       </div>
     )
   }
+
 }

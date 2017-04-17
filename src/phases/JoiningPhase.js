@@ -11,9 +11,9 @@ export default class JoiningPhase extends Component {
       <div className="JoiningPhase">
         <div className="JoiningPhase-time">Game begins in {Math.round(Number(this.props.phaseTime) - Number(this.props.timeSincePhaseStart))}</div>
         <div className="JoiningPhase-row">
-          {this.props.player1.joined ? <img src={AvatarPlayer}/> : <img className="JoiningPhase-AvatarMissing" src={AvatarMissing}/>}
+          {this.props.player1.joined ? <img src={AvatarPlayer} alt="player joined"/> : <img alt="player missing" className="JoiningPhase-AvatarMissing" src={AvatarMissing}/>}
           <div className="JoiningPhase-row-vs">VS</div>
-          {this.props.player2.joined ? <img src={AvatarPlayer}/> : <img className="JoiningPhase-AvatarMissing" src={AvatarMissing}/>}
+          {this.props.player2.joined ? <img src={AvatarPlayer} alt="player joined"/> : <img alt="player missing" className="JoiningPhase-AvatarMissing" src={AvatarMissing}/>}
         </div>
       </div>
     )

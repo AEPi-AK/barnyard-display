@@ -10,10 +10,10 @@ import TimeUpPhase from './phases/TimeUpPhase.js'
 import ScoringPhase from './phases/ScoringPhase.js'
 import WinnerPhase from './phases/WinnerPhase.js'
 
-import rainforestImage from "./images/rainforest.jpg"
-import arcticImage from "./images/arctic.jpg"
-import desertImage from "./images/desert.jpg"
-import grasslandsImage from "./images/grasslands.jpg"
+import rainforestImage from "./images/biomes/rainforest.jpg"
+import arcticImage from "./images/biomes/arctic.jpg"
+import desertImage from "./images/biomes/desert.jpg"
+import grasslandsImage from "./images/biomes/grasslands.jpg"
 
 // How frequently we poll the server for changes
 const POLL_FREQUENCY = 1000 // ms
@@ -47,7 +47,7 @@ class App extends Component {
     this.state = {
       phaseTime: "5.00",
       timeSincePhaseStart: "2.33234",
-      currentPhase: 'GameWaiting',
+      currentPhase: 'GameTimeUp',
       player1: {joined: false},
       player2: {joined: true},
       location: 'desert',
