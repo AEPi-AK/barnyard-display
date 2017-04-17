@@ -68,6 +68,36 @@ html, body, #root {
 
 }
 
+
+/* JoiningPhase */
+
+.JoiningPhase {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.JoiningPhase-time {
+  font-size: 70px;
+  margin-bottom: 90px;
+}
+
+.JoiningPhase-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.JoiningPhase-row-vs {
+  font-size: 140px;
+  font-weight: 700;
+}
+
 /* InstructionPhase */
 .instructions-phase {
   text-align: center;

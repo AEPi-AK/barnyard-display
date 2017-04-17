@@ -10,11 +10,11 @@
         </mask>
     </defs>
     <g id="frontend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="2-waiting-for-players-copy-13" transform="translate(-840.000000, -237.000000)">
-            <g id="Group-3" transform="translate(840.000000, 237.000000)">
+        <g id="GameJoining-2" transform="translate(-959.000000, -234.000000)">
+            <g id="Group-3" transform="translate(959.000000, 234.000000)">
                 <use id="Rectangle-Copy-2" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="19.2" stroke-dasharray="23.52000045776367" xlink:href="#path-1"></use>
                 <text id="?" font-family="Lato-Black, Lato" font-size="156" font-weight="700" fill="#FFFFFF">
-                    <tspan x="110.823" y="223.497797">?</tspan>
+                    <tspan x="111.223" y="197">?</tspan>
                 </text>
             </g>
         </g>
