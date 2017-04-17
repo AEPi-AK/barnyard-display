@@ -9,6 +9,7 @@ function playerTotalScore({slot0Score, slot1Score, slot2Score}) {
 class ResultsPanel extends Component {
 
   render() {
+    console.log(this.props.player)
     return (
       <div className="ResultsPanel">
         <div className="ResultsPanel-header">
@@ -21,7 +22,11 @@ class ResultsPanel extends Component {
           </div>
         </div>
         <div className="ResultsPanel-beast">
-          <Beast/>
+          <Beast
+            head={this.props.player.slot0}
+            body={this.props.player.slot1}
+            leg={this.props.player.slot2}
+          />
         </div>
         <div className="ResultsPanel-starPanel">
           <img src={Star} alt="star"/>

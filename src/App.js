@@ -49,13 +49,28 @@ class App extends Component {
       timeSincePhaseStart: '2.33234',
       currentPhase: 'GameScoring',
       player1: {
+        slot0: 'NoHead',
+        slot1: 'NoBody',
+        slot2: 'NoLeg',
         slot0Score: 0,
         slot1Score: 0,
-        slot2Score: 3,
-        joined: false
+        slot2Score: 0,
+        joined: false,
       },
-      player2: {joined: true},
+      player2: {
+        slot0: 'NoHead',
+        slot1: 'NoBody',
+        slot2: 'NoLeg',
+        slot0Score: 0,
+        slot1Score: 0,
+        slot2Score: 0,
+        joined: false,
+      },
       location: 'desert',
+      settings: {
+        volume: 25, // [0-100]
+        brightness: 255, // [0-255]
+      }
     }
     // this.onPollTimer()
     // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
