@@ -83,6 +83,7 @@ html, body, #root {
 .JoiningPhase-time {
   font-size: 70px;
   margin-bottom: 90px;
+  margin-top: -160px;
 }
 
 .JoiningPhase-row {
@@ -97,6 +98,10 @@ html, body, #root {
 .JoiningPhase-row-vs {
   font-size: 140px;
   font-weight: 700;
+}
+
+.JoiningPhase-AvatarMissing {
+  margin-bottom: -160px;
 }
 
 /* InstructionPhase */

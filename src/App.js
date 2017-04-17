@@ -47,7 +47,9 @@ class App extends Component {
     this.state = {
       phaseTime: "5.00",
       timeSincePhaseStart: "2.33234",
-      currentPhase: 'GameInstructions',
+      currentPhase: 'GameJoining',
+      player1: {joined: false},
+      player2: {joined: true},
       location: 'desert',
     }
     // this.onPollTimer()
