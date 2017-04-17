@@ -46,23 +46,23 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      didInitialLoad: false,
+      didInitialLoad: true,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
       currentPhase: 'GameInProgress',
       player1: {
-        slot0: 'NoHead',
-        slot1: 'NoBody',
-        slot2: 'NoLeg',
+        slot0: 'Bison',
+        slot1: 'TreeFrog',
+        slot2: 'Lizard',
         slot0Score: 0,
         slot1Score: 0,
         slot2Score: 0,
         joined: false,
       },
       player2: {
-        slot0: 'NoHead',
-        slot1: 'NoBody',
-        slot2: 'NoLeg',
+        slot0: 'Vulture',
+        slot1: 'Penguin',
+        slot2: 'Emu',
         slot0Score: 0,
         slot1Score: 0,
         slot2Score: 0,
@@ -74,8 +74,8 @@ class App extends Component {
         brightness: 255, // [0-255]
       }
     }
-    this.onPollTimer()
-    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    // this.onPollTimer()
+    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {
