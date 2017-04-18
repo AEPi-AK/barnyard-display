@@ -38,7 +38,7 @@ export default class InProgressPhase extends Component {
         <Sound
           url='./audio/inprogress.mp3'
           volume={this.props.settings.volume}
-          playStatus={Sound.status.STOPPED}
+          playStatus={Sound.status.PLAYING}
           playFromPosition={0 /* in milliseconds */}
         />
         <Sound
