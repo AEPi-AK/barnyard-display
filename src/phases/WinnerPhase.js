@@ -10,7 +10,7 @@ export default class WinnerPhase extends Component {
     if (this.props.winner === 'Player1') {
       winText = 'Player 1 wins!'
     }
-    else if (this.props.winner === 'Player 2') {
+    else if (this.props.winner === 'Player2') {
       winText = 'Player 2 wins!'
     } else {
       winText = "It's a Tie!"
