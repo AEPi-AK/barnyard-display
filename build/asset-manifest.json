@@ -1,9 +1,9 @@
 {
   "main.css": "static/css/main.40769c9b.css",
   "main.css.map": "static/css/main.40769c9b.css.map",
-  "main.js": "static/js/main.aa309ff9.js",
-  "main.js.map": "static/js/main.aa309ff9.js.map",
-  "static/media/arctic.jpg": "static/media/arctic.e8e3a7d3.jpg",
+  "main.js": "static/js/main.cab21d7d.js",
+  "main.js.map": "static/js/main.cab21d7d.js.map",
+  "static/media/arctic.jpg": "static/media/arctic.bdc199cc.jpg",
   "static/media/avatar-missing-with-instructions.svg": "static/media/avatar-missing-with-instructions.19f832e2.svg",
   "static/media/avatar-player.svg": "static/media/avatar-player.966699d2.svg",
   "static/media/blueprint-pattern.png": "static/media/blueprint-pattern.14dfeaea.png",
@@ -13,8 +13,8 @@
   "static/media/body-zebra.png": "static/media/body-zebra.aa976ba6.png",
   "static/media/buildabeast-logo.png": "static/media/buildabeast-logo.fda14483.png",
   "static/media/clock.svg": "static/media/clock.f634b9ce.svg",
-  "static/media/desert.jpg": "static/media/desert.e8f01764.jpg",
-  "static/media/grasslands.jpg": "static/media/grasslands.4c3c68e3.jpg",
+  "static/media/desert.jpg": "static/media/desert.4b3aaec3.jpg",
+  "static/media/grasslands.jpg": "static/media/grasslands.b4ad29c2.jpg",
   "static/media/head-bison.png": "static/media/head-bison.fd2f2186.png",
   "static/media/head-toucan.png": "static/media/head-toucan.6ba92c04.png",
   "static/media/head-vulture.png": "static/media/head-vulture.5991262e.png",
@@ -27,6 +27,6 @@
   "static/media/leg-lizard.png": "static/media/leg-lizard.1afc4357.png",
   "static/media/leg-polarbear.png": "static/media/leg-polarbear.c93f2514.png",
   "static/media/presstoplay.png": "static/media/presstoplay.b8be7a65.png",
-  "static/media/rainforest.jpg": "static/media/rainforest.c7de1017.jpg",
+  "static/media/rainforest.jpg": "static/media/rainforest.87b40fc2.jpg",
   "static/media/star.svg": "static/media/star.2ca148b4.svg"
 }
