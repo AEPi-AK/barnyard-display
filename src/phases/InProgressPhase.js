@@ -15,21 +15,21 @@ export default class InProgressPhase extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      playCorrectTileSound: false,
+      playInCorrectTileSound: false,
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    let playCorrectTileSound = false
+    let playInCorrectTileSound = false
     if (this.props.player1.slot0 !== 'HeadErr' && nextProps.player1.slot0 === 'HeadErr') {
-      console.log('playCorrectTileSound = true')
-      playCorrectTileSound = true
+      console.log('playInCorrectTileSound = true')
+      playInCorrectTileSound = true
     }
     else if (nextProps.player1.slot0 !== 'HeadErr') {
-      console.log('playCorrectTileSound = false')
-      playCorrectTileSound = false
+      console.log('playInCorrectTileSound = false')
+      playInCorrectTileSound = false
     }
-    this.setState({playCorrectTileSound})
+    this.setState({playInCorrectTileSound})
   }
 
   render() {
@@ -37,14 +37,14 @@ export default class InProgressPhase extends Component {
       <div className="InProgressPhase biome-background">
         <Sound
           url='./audio/inprogress.mp3'
-          volume={this.props.settings.volume}
+          volume={this.props.settings.volume - 20}
           playStatus={Sound.status.PLAYING}
           playFromPosition={0 /* in milliseconds */}
         />
         <Sound
-          url='./audio/tile-placed-correct.wav'
+          url='./audio/tile-placed-incorrect.wav'
           volume={this.props.settings.volume}
-          playStatus={this.state.playCorrectTileSound ? Sound.status.PLAYING : Sound.status.STOPPED}
+          playStatus={this.state.playInCorrectTileSound ? Sound.status.PLAYING : Sound.status.STOPPED}
         />
         {/* <Sound
           url='./audio/tile-placed-incorrect.wav'
