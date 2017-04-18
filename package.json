@@ -5,7 +5,8 @@
   "homepage": "./",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-sound": "^0.5.2"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
