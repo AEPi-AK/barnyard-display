@@ -16,7 +16,7 @@ import desertImage from "./images/biomes/desert.jpg"
 import grasslandsImage from "./images/biomes/grasslands.jpg"
 
 // How frequently we poll the server for changes
-const POLL_FREQUENCY = 1500 // ms
+const POLL_FREQUENCY = 150 // ms
 const SERVER_URL = 'http://barnyard-nuc.local'
 
 const biomeImages = {
