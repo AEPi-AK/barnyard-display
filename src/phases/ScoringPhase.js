@@ -21,7 +21,7 @@ const scientificNames = [
   'Rushus AEPius'
 ]
 
-const audioForScientificName = name => name.split(' ').slice(-1)[0].toLowerCase()
+const audioForScientificName = name => name.split(' ').slice(-2)[0].toLowerCase()
 
 const randomName = () => scientificNames[Math.floor(Math.random()*scientificNames.length)];
 
@@ -121,7 +121,7 @@ export default class ScoringPhase extends Component {
           }
           {
             !this.props.player2.joined ? '' :
-            <ResultsPanel player={this.props.player2} audioDelay={2500}  scientificName={this.state.n2} playerNum={2} {...this.props}/>
+            <ResultsPanel player={this.props.player2} audioDelay={3000}  scientificName={this.state.n2} playerNum={2} {...this.props}/>
           }
         </div>
       </div>

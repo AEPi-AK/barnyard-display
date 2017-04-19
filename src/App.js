@@ -60,7 +60,7 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameInProgress',
+      currentPhase: 'GameScoring',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
@@ -86,8 +86,8 @@ class App extends Component {
         brightness: 255, // [0-255]
       }
     }
-    this.onPollTimer()
-    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    // this.onPollTimer()
+    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {
