@@ -33,7 +33,7 @@ const descriptors = {
     'Body is well-suited to the environment. ',
   ],
   leg: [
-    'Difficulty naviating the terrain. ',
+    'Difficulty navigating the terrain. ',
     '',
     'Strong locomotive ability. ',
   ],
