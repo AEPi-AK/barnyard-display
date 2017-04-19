@@ -123,9 +123,11 @@ html, body, #root {
 
 @keyframes pulse {
   from {
+    transform: scale(0.7);
     opacity: 0.5;
   }
   to: {
+    transform: scale(1);
     opacity: 1;
   }
 }
