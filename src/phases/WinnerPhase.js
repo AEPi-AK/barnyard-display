@@ -26,8 +26,7 @@ export default class WinnerPhase extends Component {
         <VoiceLine name={voiceLine} volume={this.props.settings.volume}/>
         <img className="image-full-background" alt={this.props.location} src={this.props.biomeImages[this.props.location]}/>
         <Banner title={winText}/>
-        <div className="ScoringPhase-resultsPanels">
-        </div>
+        <div className="ScoringPhase-resultsPanels"/>
       </div>
     )
   }

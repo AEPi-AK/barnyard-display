@@ -25,6 +25,7 @@ html, body, #root {
   top: 0;
   left: 0;
   z-index: -1;
+  transition: all 250ms ease-in-out;
 }
 
 /* WaitingPhase */
@@ -73,6 +74,7 @@ html, body, #root {
   justify-content: center;
   flex-direction: column;
   background-image: url(./images/blueprint-full.png);
+  transition: all 250ms ease-in-out;
 }
 
 .JoiningPhase-time {
@@ -89,6 +91,20 @@ html, body, #root {
   justify-content: space-around;
   width: 100%;
   margin-bottom: 80px;
+}
+
+.JoiningPhase-avatar-bundle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.JoiningPhase-avatar-title {
+  margin-top: 15px;
+  font-size: 40px;
+  font-family: 'LatoWebSemibold';
+
 }
 
 .JoiningPhase-row-vs {
@@ -185,8 +201,8 @@ html, body, #root {
 }
 
 .Jumbotron {
-  width: 540px;
-  height: 430px;
+  /*width: 540px;*/
+  /*height: 430px;*/
   background: rgba(0, 0, 0, 0.76);
   font-size: 80px;
   display: flex;
@@ -212,6 +228,10 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+.ScoringPhase .image-full-background {
+  filter: brightness(0.5);
 }
 
 .ScoringPhase-resultsPanels {
@@ -276,6 +296,14 @@ html, body, #root {
   height: 100%;
 }
 
+.TimeUpPhase .image-full-background {
+  filter: brightness(0.5);
+  transition: all 250ms ease-in-out;
+}
+
+.TimeUpPhase-timesup {
+
+}
 
 /* WinnerPhase */
 
@@ -284,4 +312,22 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Nag-container {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.Nag-text {
+  width: 440px;
+  line-height: 140%;
+}
+
+.Nag-container > img {
+  height: 160px;
+  margin-right: 50px;
 }

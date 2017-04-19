@@ -60,7 +60,7 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameTimeUp',
+      currentPhase: 'GameWaiting',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
