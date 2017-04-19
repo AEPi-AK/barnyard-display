@@ -54,26 +54,32 @@ export default class InProgressPhase extends Component {
           </div>
         </Banner>
         <div className="InProgress-beasts">
-          <div className="ResultsPanel">
-            <div className="ResultsPanel-header">
-              Player 1's creation
+          {
+            !this.props.player1.joined ? '' :
+            <div className="ResultsPanel">
+              <div className="ResultsPanel-header">
+                Player 1's creation
+              </div>
+              <Beast
+                head={this.props.player1.slot0}
+                body={this.props.player1.slot1}
+                leg={this.props.player1.slot2}
+              />
             </div>
-            <Beast
-              head={this.props.player1.slot0}
-              body={this.props.player1.slot1}
-              leg={this.props.player1.slot2}
-            />
-          </div>
-          <div className="ResultsPanel">
-            <div className="ResultsPanel-header">
-              Player 2's creation
+          }
+          {
+            !this.props.player2.joined ? '' :
+            <div className="ResultsPanel">
+              <div className="ResultsPanel-header">
+                Player 2's creation
+              </div>
+              <Beast
+                head={this.props.player2.slot0}
+                body={this.props.player2.slot1}
+                leg={this.props.player2.slot2}
+              />
             </div>
-            <Beast
-              head={this.props.player2.slot0}
-              body={this.props.player2.slot1}
-              leg={this.props.player2.slot2}
-            />
-          </div>
+          }
         </div>
       </div>
     )
