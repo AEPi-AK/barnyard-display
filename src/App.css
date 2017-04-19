@@ -227,7 +227,7 @@ html, body, #root {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .ScoringPhase .image-full-background {
@@ -237,7 +237,13 @@ html, body, #root {
 .ScoringPhase-resultsPanels {
   display: flex;
   flex-direction: row;
+  margin-bottom: 50px;
 }
+/*
+.ResultsPanel-starPanel-group {
+  display:
+}*/
+
 
 .ResultsPanel {
   background-color: rgba(0,0,0,0.8);
@@ -245,17 +251,29 @@ html, body, #root {
   padding: 25px;
   border-radius: 10px;
   border: 2.5px solid white;
+  margin-top: 150px;
+
 }
 
 .ResultsPanel-header {
   display: flex;
   flex-direction: row;
   font-size: 40px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.ResultsPanel-scientific {
+  font-style: italic;
+  font-family: 'LatoWeb';
+  margin-top: 20px;
+  font-size: 32px;
 }
 
 .ResultsPanel-playerScore {
   display: flex;
-  justify-content: center;
+  align-items: center;
   margin-left: 50px;
   font-family: 'LatoWebBold';
 }
@@ -268,13 +286,14 @@ html, body, #root {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-context: flex-around;
+  align-content: stretch;
+  justify-content: space-around;
 }
 
 .ResultsPanel-beast {
   display: flex;
   justify-content: center;
-  margin: 30px 10px 30px 10px;
+  margin: 20px 0 20px 0;
 }
 
 .ResultsPanel-description {
@@ -282,8 +301,9 @@ html, body, #root {
   justify-content: center;
   flex-direction: column;
   font-style: italic;
-  font-size: 40px;
+  font-size: 26px;
   margin-top: 20px;
+  max-width: 600px;
   font-family: 'LatoWebLight';
 }
 
@@ -330,4 +350,22 @@ html, body, #root {
 .Nag-container > img {
   height: 160px;
   margin-right: 50px;
+}
+
+.WinnerBeast {
+  width: 1000px;
+}
+
+.WinnerBeast .Beast {
+  background-color: unset;
+}
+
+
+.WinnerBeast-tie {
+  width: 700px;
+}
+
+.WinnerBeast-tie .Beast {
+  background-color: unset;
+  margin-top: 125px;
 }

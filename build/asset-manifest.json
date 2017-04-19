@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.05032cb1.css",
-  "main.css.map": "static/css/main.05032cb1.css.map",
-  "main.js": "static/js/main.e553e120.js",
-  "main.js.map": "static/js/main.e553e120.js.map",
+  "main.css": "static/css/main.16d53f47.css",
+  "main.css.map": "static/css/main.16d53f47.css.map",
+  "main.js": "static/js/main.604fe0fd.js",
+  "main.js.map": "static/js/main.604fe0fd.js.map",
   "static/media/add-player-instructions.svg": "static/media/add-player-instructions.d78ca78a.svg",
   "static/media/arctic-square.jpg": "static/media/arctic-square.c6526ed1.jpg",
   "static/media/arctic.jpg": "static/media/arctic.bdc199cc.jpg",
@@ -36,6 +36,9 @@
   "static/media/presstoplay.png": "static/media/presstoplay.b8be7a65.png",
   "static/media/rainforest-square.jpg": "static/media/rainforest-square.1bbbbdbe.jpg",
   "static/media/rainforest.jpg": "static/media/rainforest.87b40fc2.jpg",
-  "static/media/star.svg": "static/media/star.2ca148b4.svg",
+  "static/media/star-all.svg": "static/media/star-all.e266a476.svg",
+  "static/media/star-blue.svg": "static/media/star-blue.d84491fd.svg",
+  "static/media/star-red.svg": "static/media/star-red.e93b1db4.svg",
+  "static/media/star-yellow.svg": "static/media/star-yellow.b8e8e4e5.svg",
   "static/media/times-up.svg": "static/media/times-up.a947cf9e.svg"
 }

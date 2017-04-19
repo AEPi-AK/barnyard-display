@@ -60,14 +60,14 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameWaiting',
+      currentPhase: 'GameWinner',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
         slot2: 'Lizard',
-        slot0Score: 0,
-        slot1Score: 0,
-        slot2Score: 0,
+        slot0Score: 3,
+        slot1Score: 3,
+        slot2Score: 3,
         joined: true,
       },
       player2: {
@@ -77,16 +77,17 @@ class App extends Component {
         slot0Score: 0,
         slot1Score: 0,
         slot2Score: 0,
-        joined: false,
+        joined: true,
       },
+      winner: 'Tie',
       location: 'Arctic',
       settings: {
         volume: 25, // [0-100]
         brightness: 255, // [0-255]
       }
     }
-    this.onPollTimer()
-    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    // this.onPollTimer()
+    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {

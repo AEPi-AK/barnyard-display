@@ -1,14 +1,14 @@
 .Beast {
   position: relative;
-  width: 550px;
-  height: 183px;
+  width: 100%;
+  min-height: 183px;
   background-color: white;
   border-radius: 5px;
 }
 
 .Beast > img {
   position: absolute;
-  width: 550px;
+  width: 100%;
 }
 
 .Beast-head {
