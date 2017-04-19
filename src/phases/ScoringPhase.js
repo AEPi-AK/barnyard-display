@@ -50,8 +50,14 @@ export default class ScoringPhase extends Component {
         <img className="image-full-background" alt={this.props.location} src={this.props.biomeImages[this.props.location]}/>
         <Banner title={this.props.location}/>
         <div className="ScoringPhase-resultsPanels">
-          <ResultsPanel player={this.props.player1} playerNum={1}/>
-          <ResultsPanel player={this.props.player2} playerNum={2}/>
+          {
+            !this.props.player1.joined ? '' :
+            <ResultsPanel player={this.props.player1} playerNum={1}/>
+          }
+          {
+            !this.props.player2.joined ? '' :
+            <ResultsPanel player={this.props.player2} playerNum={2}/>
+          }
         </div>
       </div>
     )

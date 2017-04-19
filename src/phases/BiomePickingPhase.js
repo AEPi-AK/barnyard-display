@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import VoiceLine from '../VoiceLine'
 
 import './BiomePickingPhase.css'
 
@@ -12,18 +13,22 @@ const NUM_SPINS = 10
 
 const locations = {
   'Rainforest': {
+    wavName: 'rainforest',
     image: rainforestSquare,
     theta: -360,
   },
   'Arctic': {
+    wavName: 'arctic',
     image: arcticSquare,
     theta: -180,
   },
   'Desert': {
+    wavName: 'desert',
     image: desertSquare,
     theta: -90,
   },
   'Grassland': {
+    wavName: 'grassland',
     image: grasslandSquare,
     theta: 90,
   },
@@ -33,14 +38,21 @@ class Cube extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      theta: 45,
-      mu: 0,
+    if (this.props.shouldSpin) {
+      this.state = {
+        theta: 45,
+        mu: 0,
+      }
+      this.timer = setTimeout(this.spin.bind(this), 500)
+    } else {
+      this.state = {
+        mu: 0,
+        theta: locations[this.props.location].theta
+      }
     }
-    setTimeout(this.startSpin.bind(this), 500)
   }
 
-  startSpin() {
+  spin() {
     this.setState({
       mu: 0,
       theta: locations[this.props.location].theta + (NUM_SPINS * 360),
@@ -71,14 +83,31 @@ class Cube extends Component {
 
 }
 
+function DONT_REPEAT() {
+  this.removeSound()
+}
+
 export default class BiomePickingPhase extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      shouldPlay: true,
+    }
+  }
 
   render() {
     return (
       <div className="BiomePickingPhase">
         <img className="image-full-background" alt={this.props.location} src={this.props.biomeImages[this.props.location]}/>
-        <div className="BiomePickingPhase-title">Selecting habitat...</div>
-        <Cube {...this.props}/>
+        <div className="BiomePickingPhase-title">{this.props.currentPhase === 'GameBiomePicking' ? 'Selecting habitat...' : this.props.location}</div>
+        {
+          this.props.currentPhase === 'GameBiomePicking' ?
+          <VoiceLine name='whats-it-gonna-be' volume={this.props.settings.volume}/>
+          :
+          <VoiceLine name={locations[this.props.location].wavName} volume={this.props.settings.volume}/>
+        }
+        <Cube {...this.props} shouldSpin={this.props.currentPhase === 'GameBiomePicking'}/>
       </div>
     )
   }

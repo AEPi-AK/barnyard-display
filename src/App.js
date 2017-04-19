@@ -32,15 +32,15 @@ const biomeImages = {
 
 // String -> Component
 const phaseComponentMap = {
-  'GameWaiting': WaitingPhase,
-  'GameJoining': JoiningPhase,
-  'GameInstructions': InstructionsPhase,
-  'GameBiomePicking': BiomePickingPhase,
-  'GameBiomeSelection': BiomeSelectionPhase,
-  'GameInProgress': InProgressPhase,
-  'GameTimeUp': TimeUpPhase,
-  'GameScoring': ScoringPhase,
-  'GameWinner': WinnerPhase,
+  'GameWaiting': React.createFactory(WaitingPhase),
+  'GameJoining': React.createFactory(JoiningPhase),
+  'GameInstructions': React.createFactory(InstructionsPhase),
+  'GameBiomePicking': React.createFactory(BiomePickingPhase),
+  'GameBiomeSelection': React.createFactory(BiomePickingPhase),
+  'GameInProgress': React.createFactory(InProgressPhase),
+  'GameTimeUp': React.createFactory(TimeUpPhase),
+  'GameScoring': React.createFactory(ScoringPhase),
+  'GameWinner': React.createFactory(WinnerPhase),
 }
 
 function timeout(ms, promise) {
@@ -52,8 +52,6 @@ function timeout(ms, promise) {
   })
 }
 
-const componentForPhase = phase => React.createFactory(phaseComponentMap[phase])
-
 class App extends Component {
 
   constructor(props) {
@@ -62,7 +60,7 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameBiomePicking',
+      currentPhase: 'GameTimeUp',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
@@ -81,7 +79,7 @@ class App extends Component {
         slot2Score: 0,
         joined: false,
       },
-      location: 'Desert',
+      location: 'Arctic',
       settings: {
         volume: 25, // [0-100]
         brightness: 255, // [0-255]
@@ -107,7 +105,7 @@ class App extends Component {
         <app className="App-phase-container">
           { this.state.isLoading
             ? <LoadingScreen/>
-            : componentForPhase(this.state.currentPhase)({...this.state, biomeImages}) }
+            : phaseComponentMap[this.state.currentPhase]({...this.state, biomeImages}) }
         </app>
       </div>
     )

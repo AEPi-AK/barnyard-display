@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import VoiceLine from '../VoiceLine'
+
 import head from "../images/instruction-head.png"
 import body from "../images/instruction-body.png"
 import tail from "../images/instruction-tail.png"
@@ -9,6 +11,7 @@ export default class InstructionsPhase extends Component {
   render() {
     return (
       <div className="InstructionsPhase">
+        <VoiceLine name='instructions' volume={this.props.settings.volume}/>
         <img className='image-full-background' src={background}/>
         <div className="instructions-container">
           <div className="instructions">In a few moments, you will be shown a <span className="important-instructions">habitat</span>.</div>
@@ -26,5 +29,5 @@ export default class InstructionsPhase extends Component {
       </div>
     )
   }
-  
+
 }

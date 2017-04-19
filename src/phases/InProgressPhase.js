@@ -8,10 +8,6 @@ import Clock from '../images/clock.svg'
 
 export default class InProgressPhase extends Component {
 
-  // onLoading={this.handleSongLoading}
-  // onPlaying={this.handleSongPlaying}
-  // onFinishedPlaying={this.handleSongFinishedPlaying}
-
   constructor(props) {
     super(props)
     this.state = {
@@ -35,12 +31,11 @@ export default class InProgressPhase extends Component {
   render() {
     return (
       <div className="InProgressPhase biome-background">
-        <Sound
+        {/* <Sound
           url='./audio/inprogress.mp3'
           volume={this.props.settings.volume - 20}
           playStatus={Sound.status.PLAYING}
-          playFromPosition={0 /* in milliseconds */}
-        />
+        /> */}
         <Sound
           url='./audio/tile-placed-incorrect.wav'
           volume={this.props.settings.volume}
