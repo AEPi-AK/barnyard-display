@@ -31,7 +31,7 @@ export default class JoiningPhase extends Component {
         }
         {
           (!this.props.player1.joined || !this.props.player2.joined) ?
-          <VoiceLine name='day6' volume={this.props.settings.volume}/> : ''
+          <VoiceLine name='day6' volume={this.props.settings.volume - 10}/> : ''
         }
       </div>
     )
