@@ -36,7 +36,14 @@ export default class WinnerPhase extends Component {
         </div>
       )
     } else {
-      winText = "It's a Tie!"
+      const oneButNotTwo = this.props.player1.joined && !this.props.player2.join
+      const twoButNotOne = this.props.player2.joined && !this.props.player1.join
+      const isPlayingSolo = oneButNotTwo || twoButNotOne
+      if (isPlayingSolo) {
+        winText = "It's a Tie!"
+      } else {
+        winText = "Well done!"
+      }
       voiceLine = 'tie-win'
       panel = (
         <div className="WinnerBeast-tie">
