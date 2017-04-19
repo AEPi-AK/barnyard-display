@@ -117,7 +117,7 @@ export default class ScoringPhase extends Component {
         <div className="ScoringPhase-resultsPanels">
           {
             !this.props.player1.joined ? '' :
-            <ResultsPanel player={this.props.player1} audioDelay={0} scientificName={this.state.n1} playerNum={1} {...this.props}/>
+            <ResultsPanel player={this.props.player1} audioDelay={750} scientificName={this.state.n1} playerNum={1} {...this.props}/>
           }
           {
             !this.props.player2.joined ? '' :
