@@ -7,15 +7,16 @@ import WaitingPhase from './phases/WaitingPhase.js'
 import JoiningPhase from './phases/JoiningPhase.js'
 import InstructionsPhase from './phases/InstructionsPhase.js'
 import BiomeSelectionPhase from './phases/BiomeSelectionPhase.js'
+import BiomePickingPhase from './phases/BiomePickingPhase.js'
 import InProgressPhase from './phases/InProgressPhase.js'
 import TimeUpPhase from './phases/TimeUpPhase.js'
 import ScoringPhase from './phases/ScoringPhase.js'
 import WinnerPhase from './phases/WinnerPhase.js'
 
-import rainforestImage from "./images/biomes/rainforest.jpg"
-import arcticImage from "./images/biomes/arctic.jpg"
-import desertImage from "./images/biomes/desert.jpg"
-import grasslandsImage from "./images/biomes/grasslands.jpg"
+import rainforestImage from './images/biomes/rainforest.jpg'
+import arcticImage from './images/biomes/arctic.jpg'
+import desertImage from './images/biomes/desert.jpg'
+import grasslandImage from './images/biomes/grassland.jpg'
 
 // How frequently we poll the server for changes
 const POLL_FREQUENCY = 150 // ms
@@ -23,29 +24,29 @@ const POLL_FREQUENCY = 150 // ms
 const SERVER_URL = 'http://localhost'
 
 const biomeImages = {
-  "Rainforest": rainforestImage,
-  "Arctic": arcticImage,
-  "Desert": desertImage,
-  "Grassland": grasslandsImage
+  'Rainforest': rainforestImage,
+  'Arctic': arcticImage,
+  'Desert': desertImage,
+  'Grassland': grasslandImage
 }
 
 // String -> Component
 const phaseComponentMap = {
-  "GameWaiting": WaitingPhase,
-  "GameJoining": JoiningPhase,
-  "GameInstructions": InstructionsPhase,
-  "GameBiomePicking": BiomeSelectionPhase,
-  "GameBiomeSelection": BiomeSelectionPhase,
-  "GameInProgress": InProgressPhase,
-  "GameTimeUp": TimeUpPhase,
-  "GameScoring": ScoringPhase,
-  "GameWinner": WinnerPhase,
+  'GameWaiting': WaitingPhase,
+  'GameJoining': JoiningPhase,
+  'GameInstructions': InstructionsPhase,
+  'GameBiomePicking': BiomePickingPhase,
+  'GameBiomeSelection': BiomeSelectionPhase,
+  'GameInProgress': InProgressPhase,
+  'GameTimeUp': TimeUpPhase,
+  'GameScoring': ScoringPhase,
+  'GameWinner': WinnerPhase,
 }
 
 function timeout(ms, promise) {
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
-      reject(new Error("timeout"))
+      reject(new Error('timeout'))
     }, ms)
     promise.then(resolve, reject)
   })
@@ -61,7 +62,7 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameJoining',
+      currentPhase: 'GameBiomePicking',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
@@ -86,8 +87,8 @@ class App extends Component {
         brightness: 255, // [0-255]
       }
     }
-    // this.onPollTimer()
-    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    this.onPollTimer()
+    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {

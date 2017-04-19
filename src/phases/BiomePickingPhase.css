@@ -1,0 +1,95 @@
+.BiomePickingPhase {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /*background-image: url(../images/blueprint-full.png);*/
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../images/blueprint-full.png);
+
+}
+
+.BiomePickingPhase-title {
+  font-size: 65px;
+  margin-top: -50px;
+  margin-bottom: 100px;
+  font-family: 'LatoWebMedium';
+
+}
+
+/*.BiomePickingPhase > .image-full-background {
+  filter: brightness(0.5);
+}*/
+
+.Cube-outer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  perspective: 2000px;
+  color: white;
+}
+
+.Cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) translateZ( -200px );
+  transition: transform 8s cubic-bezier(.21,.05,.02,1);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.Cube .face {
+  margin: 0;
+  width: calc(100% - 2 * 12px);
+  height: calc(100% - 2 * 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  position: absolute;
+  border-radius: 4px;
+  backface-visibility: hidden;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.Cube .face > img {
+  height: 97%;
+  width: 97%;
+  border-radius: 15px;
+}
+
+/* Rainforest */
+.Cube .face-0  {
+  transform: rotateY(   0deg ) translateZ( 200px );
+  border: 12px solid #0fbf0f;
+  background-color: #0fbf0f;
+}
+
+/* Arctic */
+.Cube .face-1 {
+  transform: rotateY( 180deg ) translateZ( 200px );
+  border: 12px solid #017eff;
+  background-color: #017eff;
+}
+
+/* Desert */
+.Cube .face-2  {
+  transform: rotateY(  90deg ) translateZ( 200px );
+  border: 12px solid #f51919;
+  background-color: #f51919;
+}
+
+/* Grassland */
+.Cube .face-3   {
+  transform: rotateY( -90deg ) translateZ( 200px );
+  border: 12px solid #f5f513;
+  background-color: #f5f513;
+}
+.Cube .face-morgan {
+  transform: rotateX( 90deg ) translateZ( 200px );
+  border: 12px solid blue;
+  background-color: blue;
+  z-index: 100;
+}
