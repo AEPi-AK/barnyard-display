@@ -17,7 +17,7 @@ export default class WaitingPhase extends Component {
         {/* <img className='image-full-background' src={background}/> */}
         {/* <img className="logo" src={logo}/> */}
         <video className="logo-video" autoPlay loop>
-          <source src="./GameWaiting.m4v" type="video/mp4"/>
+          <source src="./GameWaiting-full.m4v" type="video/mp4"/>
         </video>
         {/* <div className="game-text-container">
           <div className="game-text">On the 6th day, God created animals.</div>

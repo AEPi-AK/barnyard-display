@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 
+import LoadingScreen from './LoadingScreen.js'
+
 import WaitingPhase from './phases/WaitingPhase.js'
 import JoiningPhase from './phases/JoiningPhase.js'
 import InstructionsPhase from './phases/InstructionsPhase.js'
@@ -39,6 +41,15 @@ const phaseComponentMap = {
   "GameWinner": WinnerPhase,
 }
 
+function timeout(ms, promise) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      reject(new Error("timeout"))
+    }, ms)
+    promise.then(resolve, reject)
+  })
+}
+
 const componentForPhase = phase => React.createFactory(phaseComponentMap[phase])
 
 class App extends Component {
@@ -46,10 +57,10 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      didInitialLoad: false,
+      isLoading: true,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameInProgress',
+      currentPhase: 'GameJoining',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
@@ -79,18 +90,21 @@ class App extends Component {
   }
 
   onPollTimer() {
-    fetch(`${SERVER_URL}/gamestate`)
+    timeout(1000, fetch(`${SERVER_URL}/gamestate`))
     .then(response => response.json())
-    .then(gameState => this.setState({...gameState, didInitialLoad: true}))
-    .catch(error => console.error(error))
+    .then(gameState => this.setState({...gameState, isLoading: false}))
+    .catch(error => {
+      this.setState({isLoading: true})
+      console.error(error)
+    })
   }
 
   render() {
     return (
       <div className="App">
         <app className="App-phase-container">
-          { !this.state.didInitialLoad
-            ? 'Loading...'
+          { this.state.isLoading
+            ? <LoadingScreen/>
             : componentForPhase(this.state.currentPhase)({...this.state, biomeImages}) }
         </app>
       </div>
