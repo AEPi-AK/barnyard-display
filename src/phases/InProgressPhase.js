@@ -31,11 +31,11 @@ export default class InProgressPhase extends Component {
   render() {
     return (
       <div className="InProgressPhase biome-background">
-        {/* <Sound
+        <Sound
           url='./audio/inprogress.mp3'
-          volume={this.props.settings.volume - 20}
+          volume={this.props.settings.volume - 40}
           playStatus={Sound.status.PLAYING}
-        /> */}
+        />
         <Sound
           url='./audio/tile-placed-incorrect.wav'
           volume={this.props.settings.volume}
@@ -53,16 +53,28 @@ export default class InProgressPhase extends Component {
             <img src={Clock}/> {timeRemaining(this.props)} remaining
           </div>
         </Banner>
-        <Beast
-          head={this.props.player1.slot0}
-          body={this.props.player1.slot1}
-          leg={this.props.player1.slot2}
-        />
-        <Beast
-          head={this.props.player2.slot0}
-          body={this.props.player2.slot1}
-          leg={this.props.player2.slot2}
-        />
+        <div className="InProgress-beasts">
+          <div className="ResultsPanel">
+            <div className="ResultsPanel-header">
+              Player 1's creation
+            </div>
+            <Beast
+              head={this.props.player1.slot0}
+              body={this.props.player1.slot1}
+              leg={this.props.player1.slot2}
+            />
+          </div>
+          <div className="ResultsPanel">
+            <div className="ResultsPanel-header">
+              Player 2's creation
+            </div>
+            <Beast
+              head={this.props.player2.slot0}
+              body={this.props.player2.slot1}
+              leg={this.props.player2.slot2}
+            />
+          </div>
+        </div>
       </div>
     )
   }

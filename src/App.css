@@ -188,6 +188,24 @@ html, body, #root {
   justify-content: center;
 }
 
+.InProgress-beast1 {
+  float: left;
+}
+
+
+.InProgress-beasts {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.InProgress-beasts .ResultsPanel-header {
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .Banner-time {
   font-size: 36px;
   font-family: 'LatoWebHeavy';
@@ -252,7 +270,6 @@ html, body, #root {
   border-radius: 10px;
   border: 2.5px solid white;
   margin-top: 150px;
-
 }
 
 .ResultsPanel-header {
@@ -357,15 +374,25 @@ html, body, #root {
 }
 
 .WinnerBeast .Beast {
+  width: 825px;
+  height: 350px;
   background-color: unset;
 }
 
+.WinnerBeast .Beast > img {
+  width: 900px !important;
+}
 
-.WinnerBeast-tie {
-  width: 700px;
+.WinnerBeast-tie .Beast {
+  width: 825px;
+  height: 275px;
+}
+
+.WinnerBeast-tie .Beast > img {
+  width: 100%;
 }
 
 .WinnerBeast-tie .Beast {
   background-color: unset;
-  margin-top: 125px;
+  margin-top: 100px;
 }

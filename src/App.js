@@ -20,8 +20,8 @@ import grasslandImage from './images/biomes/grassland.jpg'
 
 // How frequently we poll the server for changes
 const POLL_FREQUENCY = 150 // ms
-// const SERVER_URL = 'http://barnyard-nuc.local'
-const SERVER_URL = 'http://localhost'
+const SERVER_URL = 'http://barnyard-nuc.local'
+// const SERVER_URL = 'http://localhost'
 
 const biomeImages = {
   'Rainforest': rainforestImage,
@@ -60,22 +60,22 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameWinner',
+      currentPhase: 'GameInProgress',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
         slot2: 'Lizard',
         slot0Score: 3,
-        slot1Score: 3,
-        slot2Score: 3,
+        slot1Score: 2,
+        slot2Score: 1,
         joined: true,
       },
       player2: {
         slot0: 'Vulture',
         slot1: 'Penguin',
-        slot2: 'Emu',
+        slot2: 'Lemur',
         slot0Score: 0,
-        slot1Score: 0,
+        slot1Score: 2,
         slot2Score: 0,
         joined: true,
       },
@@ -86,8 +86,8 @@ class App extends Component {
         brightness: 255, // [0-255]
       }
     }
-    // this.onPollTimer()
-    // setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
+    this.onPollTimer()
+    setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
   onPollTimer() {
