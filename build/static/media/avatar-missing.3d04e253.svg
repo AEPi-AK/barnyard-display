@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="294px" height="272px" viewBox="0 0 294 272" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="294" height="272" rx="30"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="294" height="272" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="frontend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GameJoining-2" transform="translate(-959.000000, -234.000000)">
+            <g id="Group-3" transform="translate(959.000000, 234.000000)">
+                <use id="Rectangle-Copy-2" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="19.2" stroke-dasharray="23.52000045776367" xlink:href="#path-1"></use>
+                <text id="?" font-family="Lato-Black, Lato" font-size="156" font-weight="700" fill="#FFFFFF">
+                    <tspan x="111.223" y="197">?</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

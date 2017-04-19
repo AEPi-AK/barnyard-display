@@ -78,7 +78,7 @@ html, body, #root {
 .JoiningPhase-time {
   font-size: 70px;
   margin-bottom: 90px;
-  margin-top: -160px;
+  /*margin-top: -160px;*/
 }
 
 .JoiningPhase-row {
@@ -88,6 +88,7 @@ html, body, #root {
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 80px;
 }
 
 .JoiningPhase-row-vs {
@@ -96,7 +97,21 @@ html, body, #root {
 }
 
 .JoiningPhase-AvatarMissing {
-  margin-bottom: -160px;
+  /*margin-bottom: -160px;*/
+  animation-name: pulse;
+  animation-duration: 700ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+  }
+  to: {
+    opacity: 1;
+  }
 }
 
 /* InstructionPhase */

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-// import AvatarMissing from "../images/avatar-missing.svg"
-import AvatarMissing from "../images/avatar-missing-with-instructions.svg"
-import AvatarPlayer from "../images/avatar-player.svg"
+import AvatarMissing from '../images/avatar-missing.svg'
+// import AvatarMissing from '../images/avatar-missing-with-instructions.svg'
+import AvatarPlayer from '../images/avatar-player.svg'
+import AddPlayerInstructions from '../images/add-player-instructions.svg'
 
 export default class JoiningPhase extends Component {
 
@@ -15,6 +16,7 @@ export default class JoiningPhase extends Component {
           <div className="JoiningPhase-row-vs">VS</div>
           {this.props.player2.joined ? <img src={AvatarPlayer} alt="player joined"/> : <img alt="player missing" className="JoiningPhase-AvatarMissing" src={AvatarMissing}/>}
         </div>
+        <img src={AddPlayerInstructions}/>
       </div>
     )
   }
