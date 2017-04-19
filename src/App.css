@@ -255,6 +255,7 @@ html, body, #root {
 .ScoringPhase-resultsPanels {
   display: flex;
   flex-direction: row;
+  /*align-items: inherit;*/
   margin-bottom: 50px;
 }
 /*
@@ -318,7 +319,8 @@ html, body, #root {
   justify-content: center;
   flex-direction: column;
   font-style: italic;
-  font-size: 26px;
+  font-size: 28px;
+  line-height: 140%;
   margin-top: 20px;
   max-width: 600px;
   font-family: 'LatoWebLight';

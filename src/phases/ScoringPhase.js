@@ -21,20 +21,47 @@ const scientificNames = [
   'Rushus AEPius'
 ]
 
-const audioForScientificName = name => name.split(' ').slice(-2)[0].toLowerCase()
+const descriptors = {
+  head: [
+    'Has trouble feeding itself. ',
+    '',
+    'Easily able to feed itself. ',
+  ],
+  body: [
+    'Struggles to regulate temperature. ',
+    '',
+    'Body is well-suited to the environment. ',
+  ],
+  leg: [
+    'Difficulty naviating the terrain. ',
+    '',
+    'Strong locomotive ability. ',
+  ],
 
-const randomName = () => scientificNames[Math.floor(Math.random()*scientificNames.length)];
+}
+
+const audioForScientificName = name => name ? name.split(' ').slice(-1)[0].toLowerCase() : ''
+
+const randomItem = items => items[Math.floor(Math.random()*items.length)];
 
 const partUsed = (player, part) => player.slot0 == part || player.slot1 == part || player.slot2 == part
+const emptyBeast = (player) => player.slot0 == 'NoHead' && player.slot1 == 'NoBody' && player.slot2 == 'NoLeg'
 
-function nameAnimal(player) {
+function nameAnimal(names, player) {
   let name = ''
   if (partUsed(player, 'Lemur') && partUsed(player, 'Penguin')) {
     name = 'Snakus shakus'
-  } else {
-    name = randomName()
   }
-  return `${name} #${Math.floor(Math.random() *100)}`
+  else if (emptyBeast(player)) {
+    name = 'Jankus maximus'
+  }else {
+    name = randomItem(names)
+  }
+  return {
+    name,
+    remainingNameOptions: names.filter(v => name !== v)
+  }
+  // return `${name} #${Math.floor(Math.random() *100)}`
 }
 
 class ResultsPanel extends Component {
@@ -70,7 +97,10 @@ class ResultsPanel extends Component {
         </div>
         <div className="ResultsPanel-scientific">{this.props.scientificName}</div>
         <div className="ResultsPanel-description">
-          Okay at finding food. Body is a little too warm. Legs provide mobility.
+          {emptyBeast(this.props.player) ? 'This beast has no form!' : ''}
+          {descriptors['head'][this.props.player.slot0Score - 1]}
+          {descriptors['body'][this.props.player.slot1Score - 1]}
+          {descriptors['leg'][this.props.player.slot2Score - 1]}
         </div>
         <div className="ResultsPanel-beast">
           <Beast
@@ -101,12 +131,11 @@ export default class ScoringPhase extends Component {
 
   constructor(props) {
     super(props)
-    let n1, n2
-    while (n1 == n2) {
-      n1 = nameAnimal(this.props.player1)
-      n2 = nameAnimal(this.props.player2)
+    const {name, remainingNameOptions} = nameAnimal(scientificNames, this.props.player1)
+    this.state = {
+      n1: name,
+      n2: nameAnimal(remainingNameOptions, this.props.player2).name,
     }
-    this.state = { n1, n2 }
   }
 
   render() {
