@@ -90,10 +90,21 @@ class App extends Component {
     setInterval(this.onPollTimer.bind(this), POLL_FREQUENCY)
   }
 
+  onNewGameState(nextGameState) {
+    const currentGameState = this.state
+    const lockedStates = ['GameTimeUp', 'GameScoring', 'GameWinner']
+    if (lockedStates.includes(currentGameState.currentPhase)) {
+      Object.keys(nextGameState)
+      .filter(key => key === 'player1' || key === 'player2')
+      .forEach(key => delete nextGameState[key])
+    }
+    this.setState({...nextGameState, isLoading: false})
+  }
+
   onPollTimer() {
     timeout(1000, fetch(`${SERVER_URL}/gamestate`))
     .then(response => response.json())
-    .then(gameState => this.setState({...gameState, isLoading: false}))
+    .then(gameState => this.onNewGameState(gameState))
     .catch(error => {
       this.setState({isLoading: true})
       console.error(error)
