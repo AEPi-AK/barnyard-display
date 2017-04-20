@@ -257,14 +257,12 @@ html, body, #root {
 .ScoringPhase-resultsPanels {
   display: flex;
   flex-direction: row;
-  /*align-items: inherit;*/
   margin-bottom: 50px;
 }
-/*
-.ResultsPanel-starPanel-group {
-  display:
-}*/
 
+.ResultsPanel.Masterus {
+  background-color: rgba(191,164,30,0.8);
+}
 
 .ResultsPanel {
   background-color: rgba(0,0,0,0.8);

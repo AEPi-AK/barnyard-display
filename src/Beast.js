@@ -4,6 +4,7 @@ import HeadVulture from './images/parts/head-vulture.png'
 import HeadWalrus from './images/parts/head-walrus.png'
 import HeadBison from './images/parts/head-bison.png'
 import HeadToucan from './images/parts/head-toucan.png'
+import HeadAvi from './images/parts/head-avi.png'
 
 import BodyPenguin from './images/parts/body-penguin.png'
 import BodyCamel from './images/parts/body-camel.png'
@@ -24,6 +25,7 @@ const headImages = {
   Vulture: HeadVulture,
   Bison: HeadBison,
   Toucan: HeadToucan,
+  Avi: HeadAvi,
 }
 
 const bodyImages = {

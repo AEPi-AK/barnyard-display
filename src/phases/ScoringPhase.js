@@ -52,16 +52,18 @@ function nameAnimal(names, player) {
   if (partUsed(player, 'Lemur') && partUsed(player, 'Penguin')) {
     name = 'Snakus shakus'
   }
+  else if (partUsed(player, 'Avi')) {
+    name = 'Brotherus Masterus'
+  }
   else if (emptyBeast(player)) {
     name = 'Jankus maximus'
-  }else {
+  } else {
     name = randomItem(names)
   }
   return {
     name,
     remainingNameOptions: names.filter(v => name !== v)
   }
-  // return `${name} #${Math.floor(Math.random() *100)}`
 }
 
 class ResultsPanel extends Component {
@@ -77,7 +79,7 @@ class ResultsPanel extends Component {
   render() {
 
     return (
-      <div className="ResultsPanel">
+      <div className={`ResultsPanel ${partUsed(this.props.player, 'Avi') ? 'Masterus' : ''}`}>
         <div className="ResultsPanel-header">
           {
             this.state.playAudio ?
@@ -88,7 +90,7 @@ class ResultsPanel extends Component {
             : ''
           }
           <div className="ResultsPanel-playerLabel">
-            Player {this.props.playerNum}'s Creation
+            Player {this.props.playerNum}'s {partUsed(this.props.player, 'Avi') ? 'Badass' : ''} Creation
           </div>
           <div className="ResultsPanel-playerScore">
             {playerTotalScore(this.props.player)}
@@ -97,10 +99,12 @@ class ResultsPanel extends Component {
         </div>
         <div className="ResultsPanel-scientific">{this.props.scientificName}</div>
         <div className="ResultsPanel-description">
+          {partUsed(this.props.player, 'Avi') ? 'Loves Tech Team #Imagineering <3. ' : ''}
           {emptyBeast(this.props.player) ? 'This beast has no form!' : ''}
           {descriptors['head'][this.props.player.slot0Score - 1]}
           {descriptors['body'][this.props.player.slot1Score - 1]}
           {descriptors['leg'][this.props.player.slot2Score - 1]}
+          {partUsed(this.props.player, 'Avi') ? 'DragonSlayer™.  ' : ''}
         </div>
         <div className="ResultsPanel-beast">
           <Beast

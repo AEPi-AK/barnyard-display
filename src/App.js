@@ -60,7 +60,7 @@ class App extends Component {
       isLoading: false,
       phaseTime: '5.00',
       timeSincePhaseStart: '2.33234',
-      currentPhase: 'GameJoining',
+      currentPhase: 'GameScoring',
       player1: {
         slot0: 'Bison',
         slot1: 'TreeFrog',
@@ -71,10 +71,10 @@ class App extends Component {
         joined: false,
       },
       player2: {
-        slot0: 'NoHead',
-        slot1: 'NoBody',
+        slot0: 'Avi',
+        slot1: 'TreeFrog',
         slot2: 'Lizard',
-        slot0Score: 1,
+        slot0Score: 9,
         slot1Score: 1,
         slot2Score: 1,
         joined: true,
