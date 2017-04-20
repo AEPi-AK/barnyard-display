@@ -90,7 +90,7 @@ class ResultsPanel extends Component {
             : ''
           }
           <div className="ResultsPanel-playerLabel">
-            Player {this.props.playerNum}'s {partUsed(this.props.player, 'Avi') ? 'Badass' : ''} Creation
+            Player {this.props.playerNum}'s {partUsed(this.props.player, 'Avi') ? 'Dope' : ''} Creation
           </div>
           <div className="ResultsPanel-playerScore">
             {playerTotalScore(this.props.player)}
